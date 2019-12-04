@@ -11,12 +11,20 @@
 void error(char * message);
 void read_childproc(int sig);
 
-char webpage[] = "HTTP/1.1 200 OK\r \n"                               //Http
-		 "Content-Type:text/html; charset=UTF-8\r\n\r\n"
-		 "<!DOCTYPE html>\r\n"
-		 "<html><head><title> My Web page</title>\r\n"
-		 "<style>body {background-color:#FFFF00 }</style></head>\r\n"
-		 "<body><center><h1> Park Eun Je <h1><br> \r\n";
+char webpage[] = "HTTP/1.1 200 OK\r \n"
+    "Content-Type:text/html; charset=UTF-8\r\n\r\n"
+    "<!DOCTYPE html>\r\n"
+    "<title>main</title>\r\n"
+    "</head>\r\n"
+    "<body>\r\n"
+
+    "<input type=\"text\" placeholder=\"아이디\" id=\"id\"><br/>\r\n"
+    "<input type= \"password\" placeholder=\"비밀번호\" id=\"pw\"> <br/>\r\n"
+    "<input type=\"button\" value=\"로그인\" onclick=\"alert('반갑습니다')\">\r\n"
+    "<input type=\"button\" value=\"회원가입\"onclick=\"location.href=\'submit.html\'\"><br/>\r\n"
+    "<h4><a href=\"findpw.html\">비밀번호를 잊으셨나요?</a></h4>\r\n"
+    "</body>\r\n"
+    "</html> \r\n";
 int main(int argc, char *argv[]){
 
     int serv_sock,clnt_sock;
@@ -86,5 +94,8 @@ void error(char * message){
     fputc('\n',stderr);
     exit(1);
 }
+
+
+
 
 
